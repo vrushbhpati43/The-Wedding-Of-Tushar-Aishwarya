@@ -120,6 +120,7 @@
         }
 
         /* Red Marquee */
+        /* नवीन अखंड फिरणारी लाल पट्टी */
         .marquee-container {
             background-color: var(--primary-red);
             color: white;
@@ -130,8 +131,21 @@
             font-size: 1.1rem;
             border-top: 2px solid var(--gold);
             border-bottom: 2px solid var(--gold);
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
         }
-
+        .marquee-content {
+            display: flex;
+            animation: marqueeContinuous 20s linear infinite;
+        }
+        .marquee-content span {
+            padding-right: 50px; /* दोन ओळींमधील अंतर */
+        }
+        @keyframes marqueeContinuous {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         /* Sections */
         section {
             padding: 80px 20px;
