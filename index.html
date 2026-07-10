@@ -457,55 +457,50 @@ We cordially invite you to celebrate our wedding and bless us as we begin our fo
 <style>
 /* १. संपूर्ण सेक्शनसाठी बॅकग्राऊंड (Background) */
 #memories {
-    background: #111111; /* इथे तुमचा आवडीचा रंग टाका (उदा. काळा/गडद रंग जो गोल्डन फॉन्टवर छान दिसेल) */
-    /* जर तुम्हाला बॅकग्राऊंडला इमेज हवी असेल तर खालील लाईन अनकमेंट करा: */
-    background-image: url(bg4.png);
-    background-size: cover;
-    background-position: center;
-    padding: 40px 20px;
-    overflow: hidden;
-}
-
-/* २. स्लाईडर रॅपर */
-.slider-wrapper {
-    width: 100%;
-    overflow: hidden; /* बाहेरील फोटो लपवण्यासाठी */
-    position: relative;
-    padding: 20px 0;
-}
-
-/* ३. फोटो ट्रॅक - जिथे ॲनिमेशन लागू होते */
-.photo-track {
-    display: flex;
-    width: max-content;
-    gap: 15px; /* फोटोंमधील अंतर */
-    animation: scrollAnimation 20s linear infinite; /* २० सेकंदात फिरणार, हवे असल्यास वेळ कमी-जास्त करा */
-}
-
-.photo-track img {
-    width: 250px; /* फोटोंची रुंदी (तुमच्या गरजेनुसार बदला) */
-    height: 350px; /* फोटोंची उंची */
-    object-fit: cover;
-    border-radius: 10px; /* फोटोचे कोपरे थोडे गोल करण्यासाठी */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* फोटोंना हलकी सावली */
-}
-
-/* ४. ऑटोमॅटिक स्क्रोल होण्यासाठी CSS कीफ्रेम्स */
-@keyframes scrollAnimation {
-    0% {
-        transform: translateX(0);
+        background: #FFFDF9; /* किंवा तुमच्या बॅकग्राउंडचा कलर जो असेल तो */
+        background-image: url(bg4.png);
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px 40px 20px; /* वरून जागा वाढवली (100px केली) जेणेकरून मजकूर खाली येईल */
+        overflow: hidden;
     }
-    100% {
-        /* ६ फोटो आणि गॅप मिळून जितकी जागा होते, तितकी डावीकडे सरकवणे (५०%) */
-        transform: translateX(-50%); 
+    
+    #memories .royal-font {
+        margin-top: 30px; /* डिझाईनच्या खाली आणण्यासाठी अतिरिक्त जागा */
+        margin-bottom: 5px;
     }
-}
 
-/* युझरने माऊस नेल्यास स्क्रोलिंग थांबवण्यासाठी (ऐच्छिक) */
-.photo-track:hover {
-    animation-play-state: paused;
-}
-</style>
+    #memories .section-title {
+        margin-top: 10px;
+        margin-bottom: 40px; /* फोटोंपासून अंतर ठेवण्यासाठी */
+    }
+
+    .slider-wrapper {
+        width: 100%;
+        overflow: hidden; 
+        position: relative;
+        padding: 20px 0;
+    }
+    .photo-track {
+        display: flex;
+        width: max-content;
+        gap: 15px; 
+        animation: scrollLeftInfinite 20s linear infinite; 
+    }
+    .photo-track img {
+        width: 250px; 
+        height: 350px; 
+        object-fit: cover;
+        border-radius: 10px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    }
+    @keyframes scrollLeftInfinite {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .photo-track:hover {
+        animation-play-state: paused;
+    }
 
 
     <!-- ================= LOCATION PAGE (WITH DOUBLE GOLD STROKE BOX) ================= -->
